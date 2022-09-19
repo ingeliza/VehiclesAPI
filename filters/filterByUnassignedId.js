@@ -1,13 +1,12 @@
-import getUnassignedVehicles from "../getUnassignedVehicles.js"
+import dataToArr from "../getUnassignedVehicles.js";
 
 
-var idArr = Array.from(getUnassignedVehicles());
-
+let arr = dataToArr();
 
 export default function filterUnassigned(value){
     var currentId = value.vehicle_id;
 
-    if (idArr.indexOf(currentId) === -1){
+    if (arr.indexOf(currentId) === -1){
          return true;
     }
 }
