@@ -1,5 +1,6 @@
 export default function filterSpeed(value){
-    if (value.speed =! 0 && value.speed >= 10 && value.speed <=100){
+    let speed = value.speed;
+    if (speed =! 0 && speed >= 10 && speed <=100){
         return true;
     }
 }
