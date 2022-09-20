@@ -4,25 +4,17 @@ import filterTimestamp from "./filters/filterByTimestamp.js";
 import filterUnassigned from "./filters/filterByUnassignedId.js";
 import "dotenv/config.js"
 
-async function getVehicles(){
-    let response = await fetch(process.env.URLAPI1, 
-                                {method: 'GET',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                    //btoa(username:password)
-                                    'Authorization': 'Basic ' + Buffer.from(process.env.APIAUTH).toString("base64")
-                                }});
-    let data = await response.json();
-    //console.log(data.length);
 
-    let filter1 = data.filter(filterUnassigned);
-    let filter2 = filter1.filter(filterSpeed);
-    let filter3 = filter2.filter(filterTimestamp);
-    // console.log(filter1.length);
-    // console.log(filter2.length);
-    console.log(filter3);
+let response = await fetch(process.env.VEHICLESURL, 
+                            {method: 'GET',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': 'Basic ' + Buffer.from(process.env.APIAUTH).toString("base64")
+                            }});
+let data = await response.json();
 
-    //document.getElementById('data').innerHTML = filterdata;
-}
+let filter1 = data.filter(filterUnassigned);
+let filter2 = filter1.filter(filterSpeed);
+let filter3 = filter2.filter(filterTimestamp);
 
-getVehicles();
+console.log(filter3);

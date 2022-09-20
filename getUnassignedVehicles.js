@@ -1,11 +1,10 @@
 import fetch from "node-fetch";
 import "dotenv/config.js"
 
-let response = await fetch(process.env.URLAPI2, 
+let response = await fetch(process.env.UNASSIGNEDURL, 
                             {method: 'GET',
                             headers: {
                                 'Content-Type': 'application/json',
-                                //btoa(username:password)
                                 'Authorization': 'Basic ' + Buffer.from(process.env.APIAUTH).toString("base64")
                             }});
 let data = await response.json();
