@@ -10,7 +10,7 @@ async function getVehicles(){
                                 headers: {
                                     'Content-Type': 'application/json',
                                     //btoa(username:password)
-                                    'Authorization': 'Basic ' + btoa(process.env.USERNAMEAPI +':'+ process.env.PASSWORDAPI)
+                                    'Authorization': 'Basic ' + Buffer.from(process.env.APIAUTH).toString("base64")
                                 }});
     let data = await response.json();
     //console.log(data.length);
@@ -18,8 +18,8 @@ async function getVehicles(){
     let filter1 = data.filter(filterUnassigned);
     let filter2 = filter1.filter(filterSpeed);
     let filter3 = filter2.filter(filterTimestamp);
-    //console.log(filter1.length);
-    //console.log(filter2.length);
+    // console.log(filter1.length);
+    // console.log(filter2.length);
     console.log(filter3);
 
     //document.getElementById('data').innerHTML = filterdata;

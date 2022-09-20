@@ -6,17 +6,17 @@ let response = await fetch(process.env.URLAPI2,
                             headers: {
                                 'Content-Type': 'application/json',
                                 //btoa(username:password)
-                                'Authorization': 'Basic ' + btoa(process.env.USERNAMEAPI +':'+ process.env.PASSWORDAPI)
+                                'Authorization': 'Basic ' + Buffer.from(process.env.APIAUTH).toString("base64")
                             }});
 let data = await response.json();
 
 //Create an array that contains unassigned vehicles id
 export default function dataToArr(){
     let idArr = [];
+
     data.forEach(element => {
         idArr.push(element.vehicle_id);
     });
 
-    console.log(idArr);
     return idArr;
 }
