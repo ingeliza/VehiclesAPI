@@ -1,6 +1,6 @@
 # VehiclesFilter
 
-Download the project from https://github.com/ingeliza/VehiclesFilter
+Download the project from https://github.com/ingeliza/VehiclesFilter.
 
 First of all make sure you have Node.js installed.
 
