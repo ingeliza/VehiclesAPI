@@ -11,3 +11,4 @@ URL1='https://example.com/api/v2/items'
 URL2='https://example.com/api/v2/otheritems'
 APIAUTH='username:password'
 
+To see filtered data run 'node getFilteredVehicles.js'.
