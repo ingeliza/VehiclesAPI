@@ -1,6 +1,7 @@
 import fetch from "node-fetch";
 import "dotenv/config.js"
 
+
 let response = await fetch(process.env.UNASSIGNEDURL, 
                             {method: 'GET',
                             headers: {
