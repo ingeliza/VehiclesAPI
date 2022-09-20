@@ -9,8 +9,8 @@ Create an .env file from .env.example file and add there the urls of API and the
 
 For example:<br>
 ```
-URL1='https://example.com/api/v2/items'
-URL2='https://example.com/api/v2/otheritems'
+VEHICLESURL='https://example.com/api/v2/items'
+UNASSIGNEDURL='https://example.com/api/v2/otheritems'
 APIAUTH='username:password'
 ```
 
