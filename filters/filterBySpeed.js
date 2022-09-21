@@ -4,4 +4,7 @@ export default function filterSpeed(value){
     if (speed =! 0 && speed >= 10 && speed <=100){
         return true;
     }
+    else{
+        return false;
+    }
 }
