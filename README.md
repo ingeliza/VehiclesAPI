@@ -25,3 +25,9 @@ To see filtered data run:
 ```
 node getFilteredVehicles.js
 ```
+
+### Run tests
+```
+node tests/exampleFile.js
+```
+Replace 'exampleFile.js' with name of your file you would like to run.
