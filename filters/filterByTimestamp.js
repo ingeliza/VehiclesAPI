@@ -7,4 +7,7 @@ export default function filterTimestamp(value){
     if (timeInMs <= twelveMsInHours){
         return true;
     }
+    else{
+        return false;
+    }
 }
