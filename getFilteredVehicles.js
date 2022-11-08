@@ -4,14 +4,15 @@ import filterTimestamp from "./filters/filterByTimestamp.js";
 import filterUnassigned from "./filters/filterByUnassignedId.js";
 import "dotenv/config.js"
 
-
-try{
-    let response = await fetch(process.env.VEHICLESURL, 
-                                {method: 'GET',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                    'Authorization': 'Basic ' + Buffer.from(process.env.APIAUTH).toString("base64")
-                                }});
+try {
+    let response = await fetch(process.env.VEHICLESURL,
+        {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Basic ' + Buffer.from(process.env.APIAUTH).toString("base64")
+            }
+        });
     let data = await response.json();
 
     let filter1 = data.filter(filterUnassigned);
@@ -20,6 +21,6 @@ try{
 
     console.log(filter3);
 }
-catch(err){
+catch (err) {
     console.log(err.message);
 }
